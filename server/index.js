@@ -26,9 +26,21 @@ database.dbConnect();
 
 app.use(express.json());
 app.use(cookieParser());
+// Configure CORS to accept multiple allowed origins from env var `ALLOWED_ORIGINS`.
+// Example: ALLOWED_ORIGINS=http://localhost:3000,https://your-frontend.vercel.app
+const allowedOrigins = (process.env.ALLOWED_ORIGINS || "http://localhost:3000").split(",").map(o => o.trim());
+
 app.use(
     cors({
-        origin: "http://localhost:3000",
+        origin: function(origin, callback){
+            // allow requests with no origin (like mobile apps, curl)
+            if(!origin) return callback(null, true);
+            if(allowedOrigins.indexOf(origin) !== -1){
+                callback(null, true);
+            } else {
+                callback(new Error('Not allowed by CORS'));
+            }
+        },
         credentials: true,
     })
 )
