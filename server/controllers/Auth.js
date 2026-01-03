@@ -302,7 +302,9 @@ exports.changePassword = async (req, res)=>{
                     `Password updated successfully for ${updatedUserDetails.firstName} ${updatedUserDetails.lastName}`
                 )
             );
-            console.log("Email sent successfully", emailResponse.response);
+            // Support multiple response shapes (SendGrid returns an array, Brevo returns an object/string)
+            const respLog = emailResponse && (emailResponse.response || emailResponse[0] || emailResponse);
+            console.log("Email sent successfully:", respLog);
         }
         catch(err){
             // If there's an error sending the email, log the error and return 500
