@@ -4,13 +4,16 @@ const nodemailer = require("nodemailer");
 const mailSender = async(email, title, body)=>{
     try{
         let transporter = nodemailer.createTransport({
-            host: process.env.MAIL_HOST,
+            host: process.env.MAIL_HOST || 'smtp.gmail.com',
+            port: process.env.MAIL_PORT ? parseInt(process.env.MAIL_PORT, 10) : 587,
+            secure: (process.env.MAIL_SECURE === 'true') || false,
+            requireTLS: true,
+            connectionTimeout: process.env.MAIL_CONNECTION_TIMEOUT ? parseInt(process.env.MAIL_CONNECTION_TIMEOUT, 10) : 10000,
             auth: {
                 user: process.env.MAIL_USER,
                 pass: process.env.MAIL_PASS,
             },
             tls: {
-                // Allow self-signed certificates (use carefully in development only)
                 rejectUnauthorized: false,
             }
         });
@@ -27,7 +30,8 @@ const mailSender = async(email, title, body)=>{
         return info;
     }
     catch(error){
-        console.error(error);
+        console.error('MailSender error:', error);
+        throw error;
     }
 }
 
