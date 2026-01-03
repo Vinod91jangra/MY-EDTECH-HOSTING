@@ -30,17 +30,21 @@ app.use(cookieParser());
 // Example: ALLOWED_ORIGINS=http://localhost:3000,https://your-frontend.vercel.app
 const allowedOrigins = (process.env.ALLOWED_ORIGINS || "http://localhost:3000").split(",").map(o => o.trim());
 
+// log the allowed origins at startup to verify env parsing
+console.log('Allowed origins:', allowedOrigins);
 app.use(
     cors({
         origin: function(origin, callback){
-            // allow requests with no origin (like mobile apps, curl)
-            if(!origin) return callback(null, true);
-            if(allowedOrigins.indexOf(origin) !== -1){
-                callback(null, true);
-            } else {
-                callback(new Error('Not allowed by CORS'));
-            }
-        },
+                // debug log each incoming origin for CORS checks
+                console.log('CORS check origin:', origin);
+                // allow requests with no origin (like mobile apps, curl)
+                if(!origin) return callback(null, true);
+                if(allowedOrigins.indexOf(origin) !== -1){
+                    callback(null, true);
+                } else {
+                    callback(new Error('Not allowed by CORS'));
+                }
+            },
         credentials: true,
     })
 )
