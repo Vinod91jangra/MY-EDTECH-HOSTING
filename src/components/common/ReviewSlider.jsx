@@ -38,9 +38,9 @@ const ReviewSlider = () => {
 
     
   return (
-    <div className='w-full'>
-        <div>
-            <Swiper
+    <div className='w-full  '>
+        <div >
+            <Swiper className='py-5 px-5 h-50'
                 loop={true}
                 spaceBetween={40}
                 autoplay={{
@@ -58,7 +58,7 @@ const ReviewSlider = () => {
             >
                 {
                     reviews.map((review, index)=>(
-                        <SwiperSlide key={index} className='flex flex-col gap-2 bg-richblack-800 rounded-lg p-5'>
+                        <SwiperSlide key={index} className='flex flex-col gap-2 mt-20px bg-richblack-800 rounded-lg p-5 hover:scale-105 transition-transform duration-300 shadow-[0_0_20px_rgba(96,165,250,0.4),0_0_5px_rgba(168,85,247,0.4)] hover:shadow-[0_0_10px_rgba(96,165,250,0.6),0_0_20px_rgba(168,85,247,0.6)]'>
                             <div className='flex items-center gap-4'>
                                 <img 
                                     src={review?.user?.image}

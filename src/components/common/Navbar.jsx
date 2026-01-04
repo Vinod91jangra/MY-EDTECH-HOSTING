@@ -146,7 +146,7 @@ const Navbar = () => {
                 {
                   token === null && (
                     <Link to="/login">
-                      <button className='border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100 rounded-md'>
+                      <button className='border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100 rounded-md shadow-[0_0_5px_rgba(96,165,250,0.6),0_0_10px_rgba(168,85,247,0.6)] hover:shadow-[0_0_10px_rgba(96,165,250,0.8),0_0_20px_rgba(168,85,247,0.8)] transition-shadow transition-all duration-300 hover:scale-95'>
                         Login
                       </button>
                     </Link>
@@ -155,7 +155,7 @@ const Navbar = () => {
                 {
                   token === null && (
                     <Link to="/signup">
-                      <button className='border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100 rounded-md'>
+                      <button className='border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100 rounded-md shadow-[0_0_5px_rgba(96,165,250,0.6),0_0_10px_rgba(168,85,247,0.6)] hover:shadow-[0_0_10px_rgba(96,165,250,0.8),0_0_20px_rgba(168,85,247,0.8)] transition-shadow transition-all duration-300 hover:scale-95'>
                         signup
                       </button>
                     </Link>

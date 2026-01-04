@@ -29,9 +29,9 @@ const Home = () => {
 
             <Link to={"/signup"}>
                 <div className='group mt-16 p-1 mx-auto rounded-full bg-richblack-800 font-bold text-richblack-200
-                transition-all duration-200 hover:scale-95 w-fit drop-shadow-[0_1.5px_rgba(255,255,255,0.25)]'>
+                transition-all duration-200 hover:scale-95 w-fit drop-shadow-[0_1.5px_rgba(255,255,255,0.25)] shadow-[0_0_20px_rgba(96,165,250,0.4),0_0_5px_rgba(168,85,247,0.4)] hover:shadow-[0_0_10px_rgba(96,165,250,0.6),0_0_20px_rgba(168,85,247,0.6)]'>
                     <div className='flex flex-row items-center gap-2 rounded-full px-10 py-[5px] group-hover:bg-richblack-900 group-hover:drop-shadow'>
-                        <p>Become and Instructor</p>
+                        <p>Become an Instructor</p>
                         <FaArrowRight/>
                     </div>
                 </div>
@@ -56,8 +56,8 @@ const Home = () => {
                     Book a demo
                 </CTAButton>
             </div>
-
-            <div className="relative mx-3 my-14 shadow-blue-200">
+             {/* {block w-full border border-base-100 hover:opacity-95 transition-all duration-300 relative p-3 shadow-[0_0_30px_rgba(96,165,250,0.4),0_0_5px_rgba(168,85,247,0.4)]} */}
+            <div className="relative mx-3 my-14 shadow-[0_0_30px_rgba(96,165,250,0.4),0_0_5px_rgba(168,85,247,0.4)] hover:opacity-95  transition-all duration-300  hover:shadow-[0_0_40px_rgba(96,165,250,0.6),0_0_10px_rgba(168,85,247,0.6)] rounded-lg hover:scale-105">
                 <video
                     muted
                     loop
@@ -214,7 +214,7 @@ const Home = () => {
             <InstructorSection/>
 
 
-            <h2 className='text-center text-4xl font-bold mt-20'>Review from other learner</h2>
+            <h2 className='text-center text-4xl font-bold mt-20 '>Review from other learner</h2>
             {/* Review slider  */}
             <ReviewSlider/>
 
