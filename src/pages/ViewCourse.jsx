@@ -34,7 +34,7 @@ const ViewCourse = () => {
         }
 
         setCourseSpecificDetails();
-    },[courseId])
+    },[courseId, dispatch, token])
 
 
     return (

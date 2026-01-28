@@ -22,7 +22,7 @@ const VerifyEmail = () => {
         if(!signupData){
             navigate('/signup');
         }
-    },[]);
+    },[navigate, signupData]);
 
 
     function handleOnSubmit(event){
