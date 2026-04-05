@@ -7,7 +7,7 @@ import { APIConnector } from '../services/APIConnector'
 import { categories } from '../services/APIS'
 import { getCatalogPageData } from '../services/operations/pageAndComponentData'
 import CourseSlider from '../components/core/Catalog/CourseSlider'
-import Course_Card from '../components/core/Catalog/Course_Card'
+import CourseCard from '../components/core/Catalog/CourseCard'
 
 
 
@@ -24,7 +24,6 @@ const Catalog = () => {
   const {catalogName} = useParams();
   const [catalogPageData, setCatalogPageData] = useState(null);
   const [categoryId, setCategoryId] = useState(null);
-  const [loading, setLoading] = useState(false);
   const [active, setActive] = useState("Most popular");
   
 
@@ -127,7 +126,7 @@ const Catalog = () => {
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-10'>
               {
                 catalogPageData?.data?.mostSellingCourses?.slice(0,4).map((course, index)=>(
-                  <Course_Card key={index} course={course} height={"h-[400px]"}/>
+                  <CourseCard key={index} course={course} height={"h-[400px]"}/>
                 ))
               }
             </div>

@@ -1,8 +1,6 @@
 import React from 'react';
 import Footer from '../components/common/Footer';
 import ContactUsForm from '../components/ContactPage/ContactUsForm';
-import * as Icons from "react-icons/vsc";
-
 import * as Icon1 from "react-icons/bi";
 import * as Icon2 from "react-icons/hi2";
 import * as Icon3 from "react-icons/io5";

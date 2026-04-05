@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import { Autoplay, Pagination, Navigation } from "swiper";
-import CourseCard from './Course_Card';
+import CourseCard from './CourseCard';
 
 
 
