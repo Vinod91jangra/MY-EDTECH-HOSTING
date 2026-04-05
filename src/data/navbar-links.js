@@ -4,8 +4,8 @@ export const NavbarLinks = [
     path: "/",
   },
   {
-    title: "Catalog",
-    // path: '/catalog',
+    title: "Explore Courses",
+    path: '/catalog',
   },
   {
     title: "About Us",
