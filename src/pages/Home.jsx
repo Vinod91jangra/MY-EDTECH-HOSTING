@@ -27,15 +27,20 @@ const Home = () => {
         {/* Section 1 */}
         <div className='relative mx-auto max-w-maxContent flex flex-col w-11/12 items-center justify-between text-white '>
 
-            <Link to={"/signup"}>
-                <div className='group mt-16 p-1 mx-auto rounded-full bg-richblack-800 font-bold text-richblack-200
-                transition-all duration-200 hover:scale-95 w-fit drop-shadow-[0_1.5px_rgba(255,255,255,0.25)] shadow-[0_0_20px_rgba(96,165,250,0.4),0_0_5px_rgba(168,85,247,0.4)] hover:shadow-[0_0_10px_rgba(96,165,250,0.6),0_0_20px_rgba(168,85,247,0.6)]'>
-                    <div className='flex flex-row items-center gap-2 rounded-full px-10 py-[5px] group-hover:bg-richblack-900 group-hover:drop-shadow'>
-                        <p>Become an Instructor</p>
-                        <FaArrowRight/>
-                    </div>
-                </div>
-            </Link>
+           <Link to="/signup" className="flex justify-center mt-16">
+  <div className="relative group p-[3px] rounded-[0.9em] bg-gradient-to-r from-[#03a9f4] to-[#f441a5] transition-all duration-300">
+
+    {/* Glow (FIXED) */}
+    <div className="absolute inset-0 rounded-[0.9em] blur-md opacity-0 group-hover:opacity-100 transition-all duration-300 bg-gradient-to-r from-[#03a9f4] to-[#f441a5]"></div>
+
+    {/* Button */}
+    <div className="relative z-10 px-6 py-2 rounded-md bg-black text-white text-lg shadow-md flex items-center gap-2">
+      Become an Instructor
+      <FaArrowRight />
+    </div>
+
+  </div>
+</Link>
 
             <div className="text-center text-4xl font-semibold mt-7">
                 Empower your Future with
