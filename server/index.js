@@ -30,7 +30,7 @@ app.use(cookieParser());
 // Example: ALLOWED_ORIGINS=http://localhost:3000,https://your-frontend.vercel.app
 const allowedOrigins = [
   "http://localhost:3000",
-  "https://your-vercel-app.vercel.app", // replace with your real domain
+  "https://edtech-platform-frontend1-r59thelft-vinod-jangras-projects.vercel.app/", // replace with your real domain
 ];
 
 // log the allowed origins at startup to verify env parsing
