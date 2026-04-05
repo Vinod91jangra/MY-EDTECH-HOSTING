@@ -28,7 +28,10 @@ app.use(express.json());
 app.use(cookieParser());
 // Configure CORS to accept multiple allowed origins from env var `ALLOWED_ORIGINS`.
 // Example: ALLOWED_ORIGINS=http://localhost:3000,https://your-frontend.vercel.app
-const allowedOrigins = (process.env.ALLOWED_ORIGINS || "http://localhost:3000").split(",").map(o => o.trim());
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://your-vercel-app.vercel.app", // replace with your real domain
+];
 
 // log the allowed origins at startup to verify env parsing
 console.log('Allowed origins:', allowedOrigins);
