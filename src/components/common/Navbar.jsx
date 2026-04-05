@@ -69,7 +69,7 @@ const Navbar = () => {
                     return (
                       <li key={index}>
                         {
-                          element.title === 'Catalog' ?
+                          element.title === 'Explore Courses' ?
                           (<div className={`relative flex flex-row items-center font-semibold gap-1 group
                             ${matchRoute("/catalog/:catalogName") ? "text-yellow-25" : "text-richblack-25"}
                           `}>
