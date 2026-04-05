@@ -86,7 +86,7 @@ const Navbar = () => {
 
                               { 
                                 loading ? 
-                                (<p className='text-center'>Loading...</p>) :
+                                (<p className='text-center '>Loading...</p>) :
                                 subLinks.length ? 
                                   (
                                     subLinks
@@ -176,49 +176,92 @@ const Navbar = () => {
     {/* Overlay */}
 {
   mobileMenuOpen && (
-    <div 
-      className="fixed inset-0 bg-black bg-opacity-50 z-[900]"
-      onClick={() => setMobileMenuOpen(false)}
-    ></div>
+    <>
+      {/* Overlay */}
+      <div 
+        className="fixed inset-0 bg-black bg-opacity-50 z-[900]"
+        onClick={() => setMobileMenuOpen(false)}
+      ></div>
+
+      {/* Sliding Menu */}
+      <div
+        className={`fixed top-0 right-0 h-full w-[70%] bg-richblack-800 p-5 flex flex-col gap-4 z-[1000]
+        transform transition-transform duration-300 ease-in-out
+        ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"}`}
+      >
+
+        {/* Nav Links (except Explore Courses) */}
+        {
+          NavbarLinks.map((element, index) => (
+            element.title !== "Explore Courses" && (
+              <Link
+                key={index}
+                to={element?.path}
+                onClick={() => setMobileMenuOpen(false)}
+                className='text-richblack-25 font-semibold'
+              >
+                {element.title}
+              </Link>
+            )
+          ))
+        }
+
+        {/* Categories Heading */}
+        <p className="text-yellow-25 font-bold mt-4">Categories</p>
+
+        {/* Categories Content */}
+        {
+          loading ? (
+            // 🔥 Skeleton Loader
+            <div className="flex flex-col gap-3 py-4">
+              <div className="h-5 w-[90%] bg-richblack-700 rounded animate-pulse"></div>
+              <div className="h-5 w-[70%] bg-richblack-700 rounded animate-pulse"></div>
+              <div className="h-5 w-[85%] bg-richblack-700 rounded animate-pulse"></div>
+              <div className="h-5 w-[60%] bg-richblack-700 rounded animate-pulse"></div>
+            </div>
+          ) : subLinks.length ? (
+            subLinks.map((cat, index) => (
+              <Link
+                key={index}
+                to={`/catalog/${cat.name.split(" ").join("-").toLowerCase()}`}
+                onClick={() => setMobileMenuOpen(false)}
+                className='text-richblack-25 pl-2 hover:text-yellow-25 transition-all'
+              >
+                {cat.name}
+              </Link>
+            ))
+          ) : (
+            <p className="text-richblack-300 text-sm">No categories found</p>
+          )
+        }
+
+        {/* Auth Section */}
+        {
+          token === null && (
+            <>
+              <Link to="/login" onClick={() => setMobileMenuOpen(false)}>
+                <button className='text-richblack-25'>Login</button>
+              </Link>
+
+              <Link to="/signup" onClick={() => setMobileMenuOpen(false)}>
+                <button className='text-richblack-25'>Signup</button>
+              </Link>
+            </>
+          )
+        }
+
+        {
+          token !== null && (
+            <div className="mt-4">
+              <ProfileDropDown />
+            </div>
+          )
+        }
+
+      </div>
+    </>
   )
 }
-
-{/* Sliding Menu */}
-<div
-  className={`fixed top-0 right-0 h-full w-[40%] bg-richblack-800  p-5 flex flex-col gap-6 z-[1000]
-  transform transition-transform duration-300 ease-in-out
-  ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"}`}
->
-
-  {
-    NavbarLinks.map((element, index) => element.title !== 'Explore Courses'&&(
-      <Link
-        key={index}
-        to={element?.path}
-        onClick={() => setMobileMenuOpen(false)}
-        className='text-richblack-25 font-semibold'
-      >
-        {element.title}
-      </Link>
-    ))
-  }
-
-      {/* Categories (Mobile Explore Courses) */}
-      <p className="text-yellow-25 font-bold mt-4">Categories</p>
-
-      {
-        subLinks.map((cat, index) => (
-          <Link
-            key={index}
-            to={`/catalog/${cat.name.split(" ").join("-").toLowerCase()}`}
-            onClick={() => setMobileMenuOpen(false)}
-            className='text-richblack-25 pl-2'
-          >
-            {cat.name}
-          </Link>
-        ))
-      }
-</div>
     
     </div>
 
