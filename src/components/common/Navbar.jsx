@@ -12,7 +12,6 @@ import { ACCOUNT_TYPE } from "../../utils/constants"
 
 
 
-
 const Navbar = () => {
 
   const {token} = useSelector((state) => state.auth);
@@ -21,7 +20,7 @@ const Navbar = () => {
   const location = useLocation();
   const [subLinks, setSubLinks] = useState([]);
   const [loading, setLoading] = useState(false);
-
+   const[mobileMenuOpen,setMobileMenuOpen] = useState(false);
 
 
   const fetchSubLinks = async() => {
@@ -146,7 +145,7 @@ const Navbar = () => {
                 {
                   token === null && (
                     <Link to="/login">
-                      <button className='border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100 rounded-md shadow-[0_0_5px_rgba(96,165,250,0.6),0_0_10px_rgba(168,85,247,0.6)] hover:shadow-[0_0_10px_rgba(96,165,250,0.8),0_0_20px_rgba(168,85,247,0.8)] transition-shadow transition-all duration-300 hover:scale-95'>
+                      <button className='border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100 rounded-md'>
                         Login
                       </button>
                     </Link>
@@ -155,7 +154,7 @@ const Navbar = () => {
                 {
                   token === null && (
                     <Link to="/signup">
-                      <button className='border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100 rounded-md shadow-[0_0_5px_rgba(96,165,250,0.6),0_0_10px_rgba(168,85,247,0.6)] hover:shadow-[0_0_10px_rgba(96,165,250,0.8),0_0_20px_rgba(168,85,247,0.8)] transition-shadow transition-all duration-300 hover:scale-95'>
+                      <button className='border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100 rounded-md'>
                         signup
                       </button>
                     </Link>
@@ -166,15 +165,63 @@ const Navbar = () => {
 
             </div>
 
-            <button className='mr-4 md:hidden'>
+            <button className='mr-4 md:hidden'
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
               <AiOutlineMenu fontSize={24} fill="#AFB2BF"/>
             </button>
 
+
         </div>
     
-    
+    {/* Overlay */}
+{
+  mobileMenuOpen && (
+    <div 
+      className="fixed inset-0 bg-black bg-opacity-50 z-[900]"
+      onClick={() => setMobileMenuOpen(false)}
+    ></div>
+  )
+}
+
+{/* Sliding Menu */}
+<div
+  className={`fixed top-0 right-0 h-full w-[40%] bg-richblack-800  p-5 flex flex-col gap-6 z-[1000]
+  transform transition-transform duration-300 ease-in-out
+  ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"}`}
+>
+
+  {
+    NavbarLinks.map((element, index) => element.title !== 'Explore Courses'&&(
+      <Link
+        key={index}
+        to={element?.path}
+        onClick={() => setMobileMenuOpen(false)}
+        className='text-richblack-25 font-semibold'
+      >
+        {element.title}
+      </Link>
+    ))
+  }
+
+      {/* Categories (Mobile Explore Courses) */}
+      <p className="text-yellow-25 font-bold mt-4">Categories</p>
+
+      {
+        subLinks.map((cat, index) => (
+          <Link
+            key={index}
+            to={`/catalog/${cat.name.split(" ").join("-").toLowerCase()}`}
+            onClick={() => setMobileMenuOpen(false)}
+            className='text-richblack-25 pl-2'
+          >
+            {cat.name}
+          </Link>
+        ))
+      }
+</div>
     
     </div>
+
   )
 }
 
