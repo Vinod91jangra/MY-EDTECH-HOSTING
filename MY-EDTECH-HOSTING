@@ -1,0 +1,101 @@
+[33mcommit 0fdaac6a7fc4291e775ca5935d9b6b889af271b0[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Vinod91jangra <136470937+Vinod91jangra@users.noreply.github.com>
+Date:   Sun Apr 5 21:53:28 2026 +0530
+
+    Fix: set CI=false to disable strict ESLint warnings as errors
+
+[33mcommit 4f6d68edb7800ca0937990ff3b97f7ee81c80f78[m
+Author: Vinod91jangra <136470937+Vinod91jangra@users.noreply.github.com>
+Date:   Sun Apr 5 19:55:47 2026 +0530
+
+    Add Vercel configuration
+
+[33mcommit 0a9028efe6e286cc888900c21ecc3597eec27a43[m
+Author: Vinod91jangra <136470937+Vinod91jangra@users.noreply.github.com>
+Date:   Sun Apr 5 19:39:14 2026 +0530
+
+    Retry Vercel build
+
+[33mcommit 49d2a31b44d4dc1dd988b553929d3d44ddb17390[m
+Author: Vinod91jangra <136470937+Vinod91jangra@users.noreply.github.com>
+Date:   Sun Apr 5 19:19:40 2026 +0530
+
+    Catolog chnages
+
+[33mcommit 53213e7a041302a10c9f081d99beda94ef13c8f8[m
+Author: Vinod91jangra <136470937+Vinod91jangra@users.noreply.github.com>
+Date:   Sun Apr 5 18:44:27 2026 +0530
+
+    Navbar Catalog to Explore Courses
+
+[33mcommit 30df9f5fe33500de37ab0f13c6c485d54b72261e[m
+Author: Vinod91jangra <136470937+Vinod91jangra@users.noreply.github.com>
+Date:   Wed Jan 28 19:14:06 2026 +0530
+
+    Error resolved in Footer
+
+[33mcommit fd74018e067ce4d6ccc7d85a010ef9d9fac8c149[m
+Author: Vinod91jangra <136470937+Vinod91jangra@users.noreply.github.com>
+Date:   Wed Jan 28 18:42:23 2026 +0530
+
+    Footer Changed
+
+[33mcommit 581be20b67128bf8fcf2e7d6be818cda8f580243[m
+Author: Vinod91jangra <136470937+Vinod91jangra@users.noreply.github.com>
+Date:   Sun Jan 4 10:26:52 2026 +0530
+
+    Decoration in HomePage
+
+[33mcommit 9da702c67b3237a8f3835e32add7afd66be28cee[m
+Author: Vinod91jangra <136470937+Vinod91jangra@users.noreply.github.com>
+Date:   Sun Jan 4 00:33:09 2026 +0530
+
+    Become an instructor
+
+[33mcommit 06906349dd9c0f7da276ac61518c7f3d42836674[m
+Author: Vinod91jangra <136470937+Vinod91jangra@users.noreply.github.com>
+Date:   Sat Jan 3 23:46:50 2026 +0530
+
+    Added sendgrid in package.json
+
+[33mcommit 68c8b63962b0edb3b536095ecbaea45c2d638038[m
+Author: Vinod91jangra <136470937+Vinod91jangra@users.noreply.github.com>
+Date:   Sat Jan 3 23:33:45 2026 +0530
+
+    Add SendGrid dependency
+
+[33mcommit 29c961f469247d5e5c38b1897ae64cc8289eee1f[m
+Author: Vinod91jangra <136470937+Vinod91jangra@users.noreply.github.com>
+Date:   Sat Jan 3 23:04:14 2026 +0530
+
+    Sendgrid smtp is used in MailSender
+
+[33mcommit ab9e3a419ea31c90cf94d5b707aa3b825d313a33[m
+Author: Vinod91jangra <136470937+Vinod91jangra@users.noreply.github.com>
+Date:   Sat Jan 3 21:59:47 2026 +0530
+
+    OTP problem resolved
+
+[33mcommit 6d373ed236c4255820ce10d4cd31598821c16e37[m
+Author: Vinod91jangra <136470937+Vinod91jangra@users.noreply.github.com>
+Date:   Sat Jan 3 19:09:18 2026 +0530
+
+    MailSender update
+
+[33mcommit 86c7f3c94bf39775685cb806b1e226f15a7cd620[m
+Author: Vinod91jangra <136470937+Vinod91jangra@users.noreply.github.com>
+Date:   Sat Jan 3 16:41:21 2026 +0530
+
+    Again for cors
+
+[33mcommit 87ba2ffd3742c505415a5a64cc06ac79ef51dde8[m
+Author: Vinod91jangra <136470937+Vinod91jangra@users.noreply.github.com>
+Date:   Sat Jan 3 15:57:49 2026 +0530
+
+    Deployment origin changes for cors
+
+[33mcommit 18453c3ec3f68b7bee3b966fa72a6bb4377021b2[m
+Author: Vinod91jangra <136470937+Vinod91jangra@users.noreply.github.com>
+Date:   Sat Jan 3 14:38:32 2026 +0530
+
+    First-commit
