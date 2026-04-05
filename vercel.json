@@ -5,7 +5,7 @@
   "outputDirectory": "build",
   "env": {
     "CI": "false",
-    "REACT_APP_BASE_URL": "@react_app_base_url"
+    "REACT_APP_BASE_URL": "https://my-edtech-hosting-1.onrender.com/api/v1"
   },
   "regions": ["iad1"]
 }
