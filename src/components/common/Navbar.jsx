@@ -86,7 +86,14 @@ const Navbar = () => {
 
                               { 
                                 loading ? 
-                                (<p className='text-center '>Loading...</p>) :
+                                (<div className="flex flex-col gap-2 p-2">
+                                  {[1,2,3,4].map((_, i) => (
+                                    <div 
+                                      key={i}
+                                      className="h-6 bg-richblack-200 rounded animate-pulse"
+                                    ></div>
+                                  ))}
+                                </div>) :
                                 subLinks.length ? 
                                   (
                                     subLinks
